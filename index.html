@@ -24,6 +24,47 @@
           background-image: url("head.jpg");
           color: white;
         }
+
+        /*モバイル用*/
+        .timeline {
+          list-style: none;
+        }
+        .timeline > li {
+          margin-bottom: 60px;
+        }
+        @media ( min-width : 640px ) {
+        /* これからここにデスクトップ用のCSSを記述します */
+          .timeline > li {
+            overflow: hidden;
+            margin: 0;
+            position: relative;
+          }
+          .timeline-date {
+            width: 110px;
+            float: left;
+            margin-top: 20px;
+          }
+          .timeline-content {
+            width: 75%;
+            float: left;
+            border-left: 3px #e5e5d1 solid;
+            padding-left: 30px;
+          }
+
+          .timeline-content:before{
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #6fc173;
+            position: absolute;
+            left: 106px;
+            top: 24px;
+            border-radius: 100%;
+          }
+
+        }
+
+
     </style>
 </head>
 
@@ -69,26 +110,29 @@
             <h2 id="works">Self-introduction</h2>
             <p>和歌山大学大学院でシステム工学研究科2年でWebマイニングの研究室に属しています</p>
             <p>趣味はサイクリング，アニメ鑑賞，ライブ参戦(主に声優系:水瀬いのりとかTrysailとか)</p>
-            <h2 id="works">Works</h2>
+            <h2 id="works">Works(大学での研究段階や共同開発のものが多く，一般に公開はしていないものが多いです)</h2>
             <!-- bootstrapで要素を行，列に分割-->
             <div class="row">
               <div class="col-sm-6">
-                <h3>サービス名</h3>
-                <p>説明文</p>
+                <h3>トピック系列可視化システム</h3>
+                <p>東日本大震災時のツイートをLDAを用いてトピック抽出し，抽出した各期間の関連するトピックが時系列順に繋がった有向グラフ
+                   構造として可視化するシステム．トピック間の繋がりはコサイン類似度で判定．扱うトピック内容は，単語単独ではなく，単語2-gram．
+                </p>
               </div>
               <div class="col-sm-6">
-                <img src="chelly.png" class="img-responsive">
+                <img src="topic_k.png" class="img-responsive">
               </div>
             </div>
 
 
             <div class="row">
               <div class="col-sm-6">
-                <h3>サービス名</h3>
-                <p>説明文</p>
+                <h3>マルチトピックグラフ可視化システム</h3>
+                <p>特定のクエリを持つツイートをLDAでトピック抽出，各トピックの上位語の単語2-gramを再び組み立て，トピックの内容を単語をノードとする有向グラフ
+                構造であるトピックグラフとして表現．各トピックに対してこれを適用し，合成・変換して得られるマルチトピックグラフとして可視化するシステム</p>
               </div>
               <div class="col-sm-6">
-                <img src="chelly.png" class="img-responsive">
+                <img src="multi.png" class="img-responsive">
               </div>
             </div>
 
@@ -98,9 +142,92 @@
 
             <hr>
             <h2 id="skills">Skills</h2>
-            <p>説明文：あいうえおあいうえおあいうえお</p>
+            <p>資格：実用英語能力検定2級，TOEICスコア650点</p>
+
+
+
             <h2 id="skills">Career</h2>
-            <p>説明文：あいうえおあいうえおあいうえお</p>
+            <p>大学に入ってからの主な経歴</p>
+
+            <!-- 経歴のタイムラインを実装-->
+
+            <ul class="timeline">
+              <li>
+                <p class="timeline-date">2013年4月</p>
+                <div class="timeline-content">
+                  <h3>和歌山大学システム工学部情報通信システム学科　入学</h3>
+                </div>
+              </li>
+
+              <li>
+                <p class="timeline-date">2014年9月</p>
+                <div class="timeline-content">
+                  <h3>HackU 和歌山大学2014出場　坂本賞受賞</h3>
+                  <p><a href="https://hacku.yahoo.co.jp/wakayama2014/" target="_blank">『ツイ禁しようぜ！』アル演/上西達也，久保侑哉</a></p>
+
+                </div>
+              </li>
+
+
+              <li>
+                <p class="timeline-date">2017年3月</p>
+                <div class="timeline-content">
+                  <h3>和歌山大学システム工学部情報通信システム学科　卒業</h3>
+                </div>
+              </li>
+
+
+              <li>
+                <p class="timeline-date">2017年4月</p>
+                <div class="timeline-content">
+                  <h3>和歌山大学大学院システム工学研究科システム工学専攻　入学</h3>
+                </div>
+              </li>
+
+              <li>
+                <p class="timeline-date">2017年5月</p>
+                <div class="timeline-content">
+                  <h3>人工知能学会全国大会(JSAI2017)出場</h3>
+                  <p><a href="https://kaigi.org/jsai/webprogram/2017/pdf/909.pdf" target="_blank">『東日本大震災時のツイートの単語2-gramに基づくトピックの可視化』</a></p>
+                </div>
+              </li>
+
+              <li>
+                <p class="timeline-date">2017年8月</p>
+                <div class="timeline-content">
+                  <h3>HackU OSAKA2017出場</h3>
+                  <p><a href="https://hacku.yahoo.co.jp/hacku2017osaka/" target="_blank">『ワークフレンド(仮)』マンティス/上野高士，久保侑哉</a></p>
+
+                </div>
+              </li>
+
+
+              <li>
+                <p class="timeline-date">2018年3月</p>
+                <div class="timeline-content">
+                  <h3>データ工学と情報マネジメントに関するフォーラム(DEIM2018)出場</h3>
+                  <p><a href="http://db-event.jpn.org/deim2018/data/papers/288.pdf" target="_blank">『単語2-gramに基づくマルチトピックグラフの可視化』</a></p>
+                </div>
+              </li>
+
+
+              <li>
+                <p class="timeline-date">2018年4月〜</p>
+                <div class="timeline-content">
+                  <h3>就活が始まって忙しい...</h3>
+                </div>
+              </li>
+
+
+
+
+
+
+            </ul>
+
+
+
+
             <div class="row starter-template">
             <a class="btn btn-primary" href="#">Topに戻る</a>
         </div>
